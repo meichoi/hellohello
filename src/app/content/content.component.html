@@ -67,7 +67,12 @@
       </span>
     </td>
     <td>
-      {{todo.completed}}
+       <span *ngIf="todo.completed; else testtest" style="color:red">
+        {{todo.completed}}
+       </span>
+      <ng-template #testtest>
+        {{todo.completed}}
+      </ng-template>
     </td>
   </tr>
   </tbody>
