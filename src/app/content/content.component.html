@@ -1,28 +1,74 @@
+<!--
 <h2>test</h2>
+<ul>
+  <li>
+    &lt;!&ndash;
+    {{userFromServer.name | json}}&ndash;&gt;
+    {{userFromServer.name}}
+  </li>
+  <li>
+    {{userFromServer.username}}
+  </li>
+  <li>
+    {{userFromServer.email}}
+  </li>
+  <li>
+    {{userFromServer.address.street}}
+  </li>
+</ul>
 <ul>
   <li style="font-weight: 700">아이디 : {{choi.id}}</li>
   <li>이름 : {{choi.name}}</li>
   <li>나이 : {{choi.age}}</li>
-  <!--<li>취미 : {{choi.hobby[0]}}, {{choi.hobby[1]}}, {{choi.hobby[2]}}</li>-->
+  &lt;!&ndash;<li>취미 : {{choi.hobby[0]}}, {{choi.hobby[1]}}, {{choi.hobby[2]}}</li>&ndash;&gt;
   <li>주소 : {{choi.address}}</li>
 </ul>
-<!--for문 예시 let 변수 of 배열-->
+&lt;!&ndash;for문 예시 let 변수 of 배열&ndash;&gt;
 <ul>
   <li *ngFor="let h of choi.hobby">
-    <!--<span *ngIf="h !== 'Fishing'">-->
+    &lt;!&ndash;<span *ngIf="h !== 'Fishing'">&ndash;&gt;
     <span *ngIf="h">
       취미: {{h}}
     </span>
   </li>
 </ul>
-<!--style="" 돔 프로퍼티 / html 에트리뷰트 / 앵귤러  *ngFor="" , *ngIf="" , *ngSwitch="" 를 디렉티브라함-->
-<!--
+&lt;!&ndash;style="" 돔 프로퍼티 / html 에트리뷰트 / 앵귤러  *ngFor="" , *ngIf="" , *ngSwitch="" 를 디렉티브라함&ndash;&gt;
+&lt;!&ndash;
 
  *ngFor="let a of lists" 반복문
   *ngIf="" 조건문
   *ngSwitch="" CASE문
--->
-<!--(click) 이벤트 특정 함수를 호출 / 이벤트 처리 CLICK 사용 ts의 btnClicked 호출 -->
+&ndash;&gt;
+&lt;!&ndash;(click) 이벤트 특정 함수를 호출 / 이벤트 처리 CLICK 사용 ts의 btnClicked 호출 &ndash;&gt;
 <div>
   <button (click)="btnClicked()" type="button">눌러주세요</button>
 </div>
+-->
+<h2>test</h2>
+<table>
+  <thead>
+  <tr>
+    <th>아이디</th>
+    <th>내용</th>
+    <th>상태</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let todo of todos">
+    <td>
+      {{todo.id}}
+    </td>
+    <td>
+      <span  *ngIf="todo.completed === true" style="text-decoration: line-through">
+      {{todo.title}}
+      </span>
+      <span  *ngIf="todo.completed === false" >
+      {{todo.title}}
+      </span>
+    </td>
+    <td>
+      {{todo.completed}}
+    </td>
+  </tr>
+  </tbody>
+</table>

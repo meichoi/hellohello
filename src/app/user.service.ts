@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({ //관리되어 짐
   providedIn: 'root'
@@ -26,7 +27,15 @@ export class UserService {
     //데이터를 받아서 어떻게 바인딩하냐가 중요하다
   }
   //   상용자 상세보기,
+  getUserByUserid(): Observable<any> {
+    return this.http.get('https://jsonplaceholder.typicode.com/users/3')
+      // .subscribe(function (res) { // 이 순간 호출하면
+      //   console.log(res);
+      // });
+  }
+
   //   사용자 등록,
+
   //   사용자 수정,
   //   사용자 삭제
 

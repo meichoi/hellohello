@@ -1,1 +1,4 @@
 li{text-align: left;list-style: circle}
+table{border-collapse: collapse}
+table td{border:1px solid #ddd}
+table th{ border:1px solid #ddd;background-color: dodgerblue;color:#fff}
