@@ -1,0 +1,28 @@
+<h2>test</h2>
+<ul>
+  <li style="font-weight: 700">아이디 : {{choi.id}}</li>
+  <li>이름 : {{choi.name}}</li>
+  <li>나이 : {{choi.age}}</li>
+  <!--<li>취미 : {{choi.hobby[0]}}, {{choi.hobby[1]}}, {{choi.hobby[2]}}</li>-->
+  <li>주소 : {{choi.address}}</li>
+</ul>
+<!--for문 예시 let 변수 of 배열-->
+<ul>
+  <li *ngFor="let h of choi.hobby">
+    <!--<span *ngIf="h !== 'Fishing'">-->
+    <span *ngIf="h">
+      취미: {{h}}
+    </span>
+  </li>
+</ul>
+<!--style="" 돔 프로퍼티 / html 에트리뷰트 / 앵귤러  *ngFor="" , *ngIf="" , *ngSwitch="" 를 디렉티브라함-->
+<!--
+
+ *ngFor="let a of lists" 반복문
+  *ngIf="" 조건문
+  *ngSwitch="" CASE문
+-->
+<!--(click) 이벤트 특정 함수를 호출 / 이벤트 처리 CLICK 사용 ts의 btnClicked 호출 -->
+<div>
+  <button (click)="btnClicked()" type="button">눌러주세요</button>
+</div>
